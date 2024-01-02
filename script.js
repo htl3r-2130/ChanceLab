@@ -62,16 +62,17 @@ const randomNumBtn = document.querySelector("#randomNumGenerate-btn");
 randomNumBtn.addEventListener("click", randomNumGenerate)
 
 function randomNumGenerate() {
-    let min = document.querySelector("#min").value;
-    let max = document.querySelector("#max").value;
+    let min = parseInt(document.querySelector("#min").value);
+    let max = parseInt(document.querySelector("#max").value);
     const h1txt = document.querySelector("#randomNumH1");
+   // console.log(Math.floor(Math.random() * (max - min + 1) + min));
 
     function generateRandomNumberRecursively() {
-        h1txt.textContent = Math.floor(Math.random() * (max - min)) + min;
+        h1txt.textContent = Math.floor(Math.random() * (max - min + 1) + min);
 
         if (index < 5) {
             index++;
-            setTimeout(generateRandomNumberRecursively, 50);
+            setTimeout(generateRandomNumberRecursively, 70);
         }
     }
     let index = 0;
