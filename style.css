@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.24);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav a {
+    height: 100%;
+    padding: 0px 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: rgb(204, 202, 202);
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 2rem;
+    font-family: monospace;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+nav li:first-child a:hover {
+    background-color: transparent;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.445);
+    backdrop-filter: blur(5px);
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+#menu {
+    display: none;
+}
+
+@media (max-width: 1065px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    #menu {
+        display: unset;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.settings {
+    padding-left: 30px;
+    padding-top: 10px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+}
+
+#settingsLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+.firstSetting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modeChanger {
+    margin-top: 10%;
+    display: flex;
+    gap: 10px;
+}
+
+#hideSettings {
+    margin-right: 30px;
+}
+
+#hideSettings:hover {
+    background-color: rgb(204, 202, 202);
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+}
+
+.toggle-input:checked+.toggle-slider {
+    background-color: rgb(105, 105, 105);
+}
+
+.toggle-input:checked+.toggle-slider:before {
+    transform: translateX(13px);
+}
+
+#darkmodeLabel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+
+.randomNum {
+    height: 100vh;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.randomNumInput {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.randomNumInput input {
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    text-align: end;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.randomNumView {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding-top: 20vh;
+    max-width: 500px;
+}
+
+.randomNumMin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.randomNumMax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.randomNumGenerate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#randomNumGenerate-btn {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: lightblue;
+    border: 1px solid gray;
+    font-weight: bold;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.randomNumOutput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.randomNumOutput h1 {
+    font-size: 5pc;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 3em;
+    text-align: center;
+}
+
+#randomNumGenerate-btn:hover {
+    background-color: rgb(121, 160, 173);
+}
+
+#randomNumGenerate-btn:active {
+    background-color: rgb(92, 136, 151);
+}
