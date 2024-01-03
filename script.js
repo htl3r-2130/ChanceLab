@@ -13,9 +13,10 @@ function hideSidebar(){
 }
 const openSettings1 = document.querySelector("#openSettings1");
 const openSettings2 = document.querySelector("#openSettings2");
-const closeSettings = document.querySelector("#hideSettings");
 openSettings1.addEventListener("click", showSettings);
 openSettings2.addEventListener("click", showSettings);
+
+const closeSettings = document.querySelector("#hideSettings");
 closeSettings.addEventListener("click", hideSettings);
 
 function showSettings(){
@@ -25,6 +26,9 @@ function showSettings(){
 function hideSettings(){
     document.querySelector(".settings").style.display="none";
 }
+
+//Darkmode
+
 const darkmode = document.querySelector("#toggle");
 darkmode.addEventListener("change", setDarkmode);
 let darkmodeActive= false;
@@ -37,7 +41,7 @@ function setDarkmode() {
         document.querySelectorAll("svg").forEach(link => {
             link.style.fill="white";
         });
-        document.querySelector("body").style.backgroundColor="black";
+        document.querySelector(".randomNum").style.backgroundColor="black";
         document.querySelector("nav").style.backgroundColor="rgb(105, 105, 105)";
         document.querySelector(".settings").style.backgroundColor="black";
         document.querySelector("nav").style.boxShadow = "3px 3px 5px rgba(255, 255, 255, 0.24)";
@@ -50,7 +54,7 @@ function setDarkmode() {
         document.querySelectorAll("svg").forEach(link => {
             link.style.fill="black";
         });
-        document.querySelector("body").style.backgroundColor="white";
+        document.querySelector(".randomNum").style.backgroundColor="white";
         document.querySelector("nav").style.backgroundColor="white";
         document.querySelector(".settings").style.backgroundColor="white";
         document.querySelector("nav").style.boxShadow = "3px 3px 5px rgba(0, 0, 0, 0.24)";
@@ -58,24 +62,45 @@ function setDarkmode() {
     }
 }
 
+//Random Num
+
 const randomNumBtn = document.querySelector("#randomNumGenerate-btn");
 randomNumBtn.addEventListener("click", randomNumGenerate)
 
 function randomNumGenerate() {
-    let min = parseInt(document.querySelector("#min").value);
-    let max = parseInt(document.querySelector("#max").value);
-    const h1txt = document.querySelector("#randomNumH1");
-   // console.log(Math.floor(Math.random() * (max - min + 1) + min));
+    const minElement = document.querySelector("#min");
+    const maxElement = document.querySelector("#max");
+    let min = parseInt(minElement.value);
+    let max = parseInt(maxElement.value);
+    const randomNumOutput = document.querySelector("#randomNumH1");
+    const error = document.querySelector("#randomNumError");
 
-    function generateRandomNumberRecursively() {
-        h1txt.textContent = Math.floor(Math.random() * (max - min + 1) + min);
+    if (isNaN(min) || isNaN(max)) {
+        error.style.display = "block";
+        error.innerHTML = "Min oder Max darf nicht leer sein";
+    } else if (min > max) {
+        error.style.display = "block";
+        error.innerHTML = "Min darf nicht größer als Max sein";
+    } else if (max > 10000) {
+        error.style.display = "block";
+        error.innerHTML = "Max darf nicht größer als 10000 sein";
+    } else if (min < -10000) {
+        error.style.display = "block";
+        error.innerHTML = "Min darf nicht kleiner als -10000 sein";
+    } else {
+        error.style.display = "none";
+        function generateRandomNumberRecursively() {
+            randomNumOutput.textContent = Math.floor(Math.random() * (max - min + 1) + min);
 
-        if (index < 5) {
-            index++;
-            setTimeout(generateRandomNumberRecursively, 70);
+            if (index < 5) {
+                index++;
+                setTimeout(generateRandomNumberRecursively, 70);
+            }
         }
+
+        let index = 0;
+        generateRandomNumberRecursively();
     }
-    let index = 0;
-    generateRandomNumberRecursively();
 }
+
 

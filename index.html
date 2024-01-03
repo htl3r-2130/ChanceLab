@@ -14,15 +14,13 @@
             <li><a href="#" class="darkmodeText">Random Number</a></li>
             <li><a href="#" class="darkmodeText">Coinflip</a></li>
             <li><a href="#" class="darkmodeText">Roll a dice</a></li>
-            <li><a href="#" class="darkmodeText">Password generator</a></li>
             <li><a href="#" class="darkmodeText" id="openSettings1">Settings</a></li>
         </ul>
         <ul>
-            <li><a href="#" class="darkmodeText">SimpleDraw.org</a></li>
+            <li><a href="#" class="darkmodeText" id="firstChildFont">SimpleDraw.org</a></li>
             <li class="hideOnMobile" id="TEST"><a href="#" class="darkmodeText">Random Number</a></li>
             <li class="hideOnMobile"><a href="#" class="darkmodeText">Coinflip</a></li>
             <li class="hideOnMobile"><a href="#" class="darkmodeText">Roll a dice</a></li>
-            <li class="hideOnMobile"><a href="#" class="darkmodeText">Password generator</a></li>
             <li class="hideOnMobile"><a href="#" class="darkmodeText" id="openSettings2">Settings</a></li>
             <li id="menu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
@@ -49,8 +47,6 @@
 
     <main>
 
-
-
         <div class="randomNum">
             <div class="randomNumView">
                 <div class="randomNumOutput">
@@ -59,39 +55,39 @@
                 <div class="randomNumInput">
                     <div class="randomNumMin">
                         <h4>Min</h2>
-                        <input type="number" name="min" id="min" value="1" max="998" min="0">
+                        <input type="number" name="min" id="min" value="1">
                     </div>
                     <div class="randomNumMax">
                         <h4>Max</h2>
-                        <input type="number" name="max" id="max" value="100" max="999" min="1">
+                        <input type="number" name="max" id="max" value="100">
                     </div>
                 </div>
             </div>
             <div class="randomNumGenerate">
-                <button id="randomNumGenerate-btn">Generate</button>
+                <span id="randomNumError"></span>
+                <button id="randomNumGenerate-btn">Generate random number</button>
             </div>
         </div>
 
-
-
         <div class="coinflip">
-            asd
+            <div class="coinflipView">
+                
+            </div>
+            <div class="coinflipGenerate">
+                <button class="coinflip-btn">Flip</button>
+            </div>
         </div>
 
 
 
         <div class="dice">
-            asd
+            <div class="diceView">
+
+            </div>
+            <div class="diceGenerate">
+                <button class="dice-btn">Roll dice</button>
+            </div>
         </div>
-
-
-
-        <div class="randomPW">
-            asd
-        </div>
-
-
-
     </main>
 
     <script src="script.js"></script>
