@@ -274,6 +274,91 @@ ul li:first-child :hover {
     display: none;
 }
 
+.coinflip{
+    height: 100vh;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+
+}
+.coinflipView{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding-top: 20vh;
+    max-width: 500px;
+    perspective: 1000px;
+}
+#coin{
+    width: 200px;
+    height: 200px;
+}
+
+#coinflip-btn {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: lightblue;
+    border: 1px solid gray;
+    font-weight: bold;
+    border-radius: 10px;
+    min-width: 350px;
+    max-width: 500px;
+}
+#coinflip-btn:hover {
+    background-color: rgb(121, 160, 173);
+}
+
+#coinflip-btn:active {
+    background-color: rgb(92, 136, 151);
+}
+
+.dice{
+    height: 100vh;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+
+}
+.diceView{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    padding-top: 20vh;
+    max-width: 500px;
+    perspective: 1000px;
+}
+#dice{
+    width: 200px;
+    height: 200px;
+}
+
+#dice-btn {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: lightblue;
+    border: 1px solid gray;
+    font-weight: bold;
+    border-radius: 10px;
+    min-width: 350px;
+    max-width: 500px;
+}
+#dice-btn:hover {
+    background-color: rgb(121, 160, 173);
+}
+
+#dice-btn:active {
+    background-color: rgb(92, 136, 151);
+}
 
 @media (max-width: 880px) {
     .hideOnMobile {

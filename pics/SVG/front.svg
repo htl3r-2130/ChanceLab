@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        font-family: MinionConceptRoman-Bold, 'Minion Variable Concept';
+        font-size: 163px;
+        font-variation-settings: 'wght' 700, 'opsz' 11;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-2" cx="100" cy="100" r="95.5"/>
+    <path class="cls-1" d="M100,9c50.18,0,91,40.82,91,91s-40.82,91-91,91S9,150.18,9,100,49.82,9,100,9M100,0C44.77,0,0,44.77,0,100s44.77,100,100,100,100-44.77,100-100S155.23,0,100,0h0Z"/>
+  </g>
+  <path class="cls-1" d="M100,18c45.21,0,82,36.79,82,82s-36.79,82-82,82S18,145.21,18,100,54.79,18,100,18M100,15C53.06,15,15,53.06,15,100s38.06,85,85,85,85-38.06,85-85S146.94,15,100,15h0Z"/>
+  <text class="cls-3" transform="translate(57.77 147.26)"><tspan x="0" y="0">1</tspan></text>
+</svg>
