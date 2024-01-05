@@ -339,6 +339,7 @@ ul li:first-child :hover {
 #dice{
     width: 200px;
     height: 200px;
+    transition: transform 0.6s ease;
 }
 
 #dice-btn {
@@ -359,6 +360,8 @@ ul li:first-child :hover {
 #dice-btn:active {
     background-color: rgb(92, 136, 151);
 }
+
+
 
 @media (max-width: 880px) {
     .hideOnMobile {

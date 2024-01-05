@@ -102,3 +102,49 @@ function randomNumGenerate() {
         generateRandomNumberRecursively();
     }
 }
+
+const diceBtn = document.querySelector("#dice-btn");
+diceBtn.addEventListener("click", rollDice);
+const dice = document.querySelector("#dice");
+let currentRotation = 0;
+
+function rollDice() {
+    setTimeout(() => rotate(90), 1);
+    setTimeout(setRandomSrc, 100);
+    setTimeout(() => rotate(90), 1);
+    setTimeout(setRandomSrc, 200);
+    setTimeout(() => rotate(90), 1);
+    setTimeout(setRandomSrc, 300);
+    setTimeout(() => rotate(90), 1);
+    
+}
+function rotate(degrees) {
+    currentRotation += degrees;
+    dice.style.transform = `rotate(${currentRotation}deg)`;
+}
+function setRandomSrc(){
+    let diceValue = Math.floor(Math.random() * 6) + 1;
+
+     switch (diceValue) {
+         case 1:
+             dice.src = "pics/SVG/one.svg";
+             break;
+         case 2:
+             dice.src = "pics/SVG/two.svg";
+             break;
+         case 3:
+             dice.src = "pics/SVG/three.svg";
+             break;
+         case 4:
+             dice.src = "pics/SVG/four.svg";
+             break;
+         case 5:
+             dice.src = "pics/SVG/five.svg";
+             break;
+         case 6:
+             dice.src = "pics/SVG/six.svg";
+             break;
+         default:
+             break;
+     }
+}
