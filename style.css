@@ -12,6 +12,9 @@ body {
 nav {
     background-color: white;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.24);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -293,10 +296,10 @@ ul li:first-child :hover {
     max-width: 500px;
     perspective: 1000px;
 }
-#coin{
+#rotatingBox {
     width: 200px;
     height: 200px;
-}
+  }
 
 #coinflip-btn {
     width: 50%;
@@ -339,7 +342,6 @@ ul li:first-child :hover {
 #dice{
     width: 200px;
     height: 200px;
-    transition: transform 0.6s ease;
 }
 
 #dice-btn {
