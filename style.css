@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family:sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 20vh;
 }
 
 body {
@@ -96,6 +98,7 @@ ul li:first-child :hover {
     background-color: white;
     display: none;
     flex-direction: column;
+    z-index: 999;
 }
 
 #settingsLabel {
@@ -321,7 +324,7 @@ ul li:first-child :hover {
 }
 
 .dice{
-    height: 100vh;
+    height: 120vh;
     background-color: lightgray;
     display: flex;
     align-items: center;
@@ -380,3 +383,11 @@ ul li:first-child :hover {
         width: 100%;
     }
 }
+/* .coinflip, .dice {
+    height: 120vh;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+} */
