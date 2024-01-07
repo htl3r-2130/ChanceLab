@@ -44,13 +44,13 @@ let darkmodeActive = false;
 
 function setDarkmode() {
   let fontWhitemode = "black";
-  let backgroundWhitemode="white";
   let navBackgroundWhitemode = "white";
+  let backgroundWhitemode = "white";
 
   let fontDarkmode = "white";
-  let backgroundDarkmode="black";
-  let navBackgroundDarkmode = "grey";
-  
+  let backgroundDarkmode = "rgb(41, 41, 41)";
+  let backgroundDarkmodeCoin = "rgb(30, 30, 30)";
+  let navBackgroundDarkmode = "black";
 
   const darkmodeText = document.querySelectorAll(".darkmodeText");
   const svg = document.querySelectorAll("svg");
@@ -62,29 +62,43 @@ function setDarkmode() {
   const max = document.querySelector("#max");
   const coinflipBackground = document.querySelector(".coinflip");
   const diceBackground = document.querySelector(".dice");
+  const footer = document.querySelector("#mainFooter");
+  const gitLogo1 = document.querySelector("#gitLogo1");
+  const gitLogo2 = document.querySelector("#gitLogo2");
 
   if (!darkmodeActive) {
-    darkmodeText.forEach((link) => {link.style.color = fontDarkmode;});
-    svg.forEach((link) => {link.style.fill = fontDarkmode;});
+    darkmodeText.forEach((link) => {
+      link.style.color = fontDarkmode;
+    });
+    svg.forEach((link) => {
+      link.style.fill = fontDarkmode;
+    });
+    document.querySelector("#close").style.fill = "black";
     nav.style.backgroundColor = navBackgroundDarkmode;
-    nav.style.boxShadow ="3px 3px 5px rgba(255, 255, 255, 0.24)";
     settingsBackground.style.backgroundColor = backgroundDarkmode;
-    
+
     randomNumBackground.style.backgroundColor = backgroundDarkmode;
     min.style.borderBottom = "4px white solid";
     max.style.borderBottom = "4px white solid";
 
-    coinflipBackground.style.backgroundColor = backgroundDarkmode;
+    coinflipBackground.style.backgroundColor = backgroundDarkmodeCoin;
 
     diceBackground.style.backgroundColor = backgroundDarkmode;
+    footer.style.backgroundColor = navBackgroundDarkmode;
+    gitLogo1.src = "pics/github-mark-white.svg";
+    gitLogo2.src = "pics/github-mark-white.svg";
+
     darkmodeActive = true;
-
   } else {
-
-    darkmodeText.forEach((link) => {link.style.color = fontWhitemode;});
-    svg.forEach((link) => {link.style.fill = fontWhitemode;});
+    darkmodeText.forEach((link) => {
+      link.style.color = fontWhitemode;
+    });
+    svg.forEach((link) => {
+      link.style.fill = fontWhitemode;
+    });
     nav.style.backgroundColor = navBackgroundWhitemode;
     settingsBackground.style.backgroundColor = backgroundWhitemode;
+    gitLogo1.src = "pics/github-mark.svg";
 
     darkmodeActive = false;
   }
@@ -105,16 +119,16 @@ function randomNumGenerate() {
 
   if (isNaN(min) || isNaN(max)) {
     error.style.display = "block";
-    error.innerHTML = "Min oder Max darf nicht leer sein";
+    error.innerHTML = "Min or Max cannot be empty";
   } else if (min > max) {
     error.style.display = "block";
-    error.innerHTML = "Min darf nicht größer als Max sein";
+    error.innerHTML = "Min cannot be greater than Max";
   } else if (max > 10000) {
     error.style.display = "block";
-    error.innerHTML = "Max darf nicht größer als 10000 sein";
+    error.innerHTML = "Max cannot be greater than 10 000";
   } else if (min < -10000) {
     error.style.display = "block";
-    error.innerHTML = "Min darf nicht kleiner als -10000 sein";
+    error.innerHTML = "Min cannot be less than -10000";
   } else {
     error.style.display = "none";
     function generateRandomNumberRecursively() {
@@ -222,13 +236,13 @@ function rollDice() {
       setTimeout(() => rotateStep(deg + step), 10);
       console.log(deg);
       if (deg == 90) {
-        setRandomSrc();
+        setRandomEvenSrc();
       }
       if (deg == 180) {
-        setRandomSrc();
+        setRandomEvenSrc();
       }
       if (deg == 270) {
-        setRandomSrc();
+        setRandomEvenSrc();
       }
       if (deg == 360) {
         setRandomSrc();
@@ -238,6 +252,24 @@ function rollDice() {
 
   rotateStep(0);
 }
+function setRandomEvenSrc() {
+  let diceValue = Math.floor(Math.random() * 3) + 1;
+
+  switch (diceValue) {
+    case 1:
+      dice.src = "pics/SVG/two.svg";
+      break;
+    case 2:
+      dice.src = "pics/SVG/four.svg";
+      break;
+    case 3:
+      dice.src = "pics/SVG/six.svg";
+      break;
+    default:
+      break;
+  }
+}
+
 function setRandomSrc() {
   let diceValue = Math.floor(Math.random() * 6) + 1;
 
