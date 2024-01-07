@@ -324,7 +324,7 @@ ul li:first-child :hover {
 }
 
 .dice{
-    height: 120vh;
+    height: 100vh;
     background-color: lightgray;
     display: flex;
     align-items: center;
@@ -366,6 +366,18 @@ ul li:first-child :hover {
     background-color: rgb(92, 136, 151);
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+}
+footer img{
+    width: 30px;
+}
+
 
 
 @media (max-width: 880px) {
@@ -383,11 +395,3 @@ ul li:first-child :hover {
         width: 100%;
     }
 }
-/* .coinflip, .dice {
-    height: 120vh;
-    background-color: lightgray;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 5vh;
-} */

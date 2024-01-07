@@ -21,10 +21,19 @@ closeSettings.addEventListener("click", hideSettings);
 
 function showSettings() {
   document.querySelector(".settings").style.display = "flex";
+  document.querySelector(".randomNum").style.display = "none";
   document.querySelector(".sidebar").style.display = "none";
+  document.querySelector(".coinflip").style.display = "none";
+  document.querySelector(".dice").style.display = "none";
 }
 function hideSettings() {
+  if (!darkmodeActive) {
+    location.reload();
+  }
   document.querySelector(".settings").style.display = "none";
+  document.querySelector(".randomNum").style.display = "flex";
+  document.querySelector(".coinflip").style.display = "flex";
+  document.querySelector(".dice").style.display = "flex";
 }
 
 //Darkmode
@@ -74,14 +83,8 @@ function setDarkmode() {
 
     darkmodeText.forEach((link) => {link.style.color = fontWhitemode;});
     svg.forEach((link) => {link.style.fill = fontWhitemode;});
-    randomNumBackground.style.backgroundColor = backgroundWhitemode;
     nav.style.backgroundColor = navBackgroundWhitemode;
     settingsBackground.style.backgroundColor = backgroundWhitemode;
-    nav.style.boxShadow ="3px 3px 5px rgba(0, 0, 0, 0.24)";
-
-
-    min.style.borderBottom = "4px black solid";
-    max.style.borderBottom = "4px black solid";
 
     darkmodeActive = false;
   }
