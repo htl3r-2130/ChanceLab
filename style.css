@@ -82,6 +82,7 @@ ul li:first-child :hover {
 
 .sidebar a {
   width: 100%;
+  font-weight: bold;
 }
 
 #menu {
