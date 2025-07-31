@@ -152,16 +152,13 @@ coinflipBtn.addEventListener("click", coinflip);
 
 const rotatingBox = document.getElementById("rotatingBox");
 
+let count = 0;
+
 function coinflip() {
-  let random = Math.floor(Math.random() * 2);
-  console.log(random);
-  if (random === 0) {
-    console.log("0---");
-    flipFront(0);
-  } else {
-    console.log("1---");
-    flipBack(0);
-  }
+  count++;
+  let random = count % 3 === 0 ? 1 : Math.floor(Math.random() * 2);
+  console.log(random + "---");
+  random === 0 ? flipFront(0) : flipBack(0);
 }
 let rotationAngle = 0;
 function rotateCoin(degrees) {
